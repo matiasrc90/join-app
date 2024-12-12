@@ -8,4 +8,9 @@
     "mongoose": "^8.8.1",
     "toastr": "^2.1.4"
   }
+,
+  "scripts": {
+    "start": "node index.js",
+    "build": "echo 'No build step required'"
+  }
 }
