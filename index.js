@@ -17,10 +17,17 @@ dbConnection.once("open", () => {
 });
 
 const corsOptions = {
-  origin: ['http://localhost:3000', 'http://127.0.0.1:3000', 'http://127.0.0.1:3001', "http://192.168.1.5:3000"],
+  origin: [
+    /* 'http://localhost:3000', 
+    'http://127.0.0.1:3000', 
+    'http://127.0.0.1:3001', 
+    'http://192.168.1.5:3000',  */
+    'https://join-app.onrender.com',
+  ],
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   allowedHeaders: ['Content-Type', 'Authorization', 'x-access-token'],
 };
+
 
 
 app.use(express.static('public'));
@@ -38,7 +45,7 @@ app.get("/", (req, res) => {
 app.use("/api", require("./api"));
 
 const server = app.listen(port, () => {
-  console.info("Servidor corriendo en http://localhost:" + port);
+  console.info("Servidor corriendo " + port);
 });
 
 
